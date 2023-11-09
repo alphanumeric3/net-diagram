@@ -1,0 +1,39 @@
+##
+## Example CSV import. Use ## for comments and # for configuration. Paste CSV below.
+## The following names are reserved and should not be used (or ignored):
+## id, tooltip, placeholder(s), link and label (see below)
+##
+## use different text based on type
+# labels: {"host":"%name%<br>%ip%", "router":"%name%<br>%ip%/?"}
+# labelname: type
+##
+## use a certain style depending on type
+## i don't know what causes this, maybe that router objects are parents of hosts,
+## but the style never seems to apply! you'll have to make them swimlanes manually.
+## in fact, try adding an extra router without children and you will see it becomes a swimlane.
+## i just don't understand.
+# styles: {"router":"whiteSpace=wrap;html=1;startSize=40;swimlane","host":""}
+# stylename: type
+##
+## connect hosts and routers (i don't think i need this now)
+## connect: {"from":"connect","to":"ip"}
+##
+## this identifies diagram cells by IP, so we can use the connect column in the CSV
+## to link hosts to their routers
+# identity: ip
+# parent: connect
+#
+## Adds a prefix to the identity of cells to make sure they do not collide with existing cells (whose
+## IDs are numbers from 0..n, sometimes with a GUID prefix in the context of realtime collaboration).
+## Default is csvimport-.
+#
+# namespace: csvimport-
+#
+## Name or JSON of layout. Possible values are auto, none, verticaltree, horizontaltree,
+## verticalflow, horizontalflow, organic, circle, orgchart or a JSON string as used in
+## Layout, Apply. Default is auto.
+#
+# layout: auto
+#
+## ---- CSV below this line. First line are column names. ----
+name,ip,type,connect
