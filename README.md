@@ -1,7 +1,10 @@
 # net-diagram
 I used this to generate parts of a network diagram somewhere.
 It uses draw.io & PowerShell. Not polished, but I'll share anyway.
-There aren't many details, just the hostname and IP address.
+It also relies on Windows, because cmdlets like Resolve-DnsName don't seem
+to be on other OSes.
+
+There aren't many details recorded, just the hostname and IP address.
 
 ## Caveats
 - You may dislike the layout. The entire thing is more specific to the network I was looking at &
@@ -14,6 +17,6 @@ There aren't many details, just the hostname and IP address.
 
 ## Usage
 1. Run the PowerShell script. It will create a CSV with a filename of your choice.
-2. Make a new diagram in draw.io, then combine the config file and your new CSV.
+2. Make a new diagram in draw.io and import the CSV,
 3. Add `waterway;` to the style of each router manually. For some reason, I cannot get draw.io to do this.
 4. It still looks awful! Burn your computer.
